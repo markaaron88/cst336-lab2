@@ -6,14 +6,27 @@ var words = [{word:"snake", hint: "It's a reptile"},
              {word:"monkey", hint: "It's a mamal"},
              {word:"beetle", hint: "It's a insect"},
              ];
-    
+    var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G',
+  'H', 'I', 'J', 'K', 'L', 'M', 'N',
+  'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+  'V', 'W', 'X', 'Y', 'Z'
+]
+
 //LISTENERS
 window.onload = startGame();
+$(".replayBtn").on("click",function(){
+    location.reload();                   
+});
+$(".letter").click(function(){
+  checkLetter($(this).attr("id")); 
+  disableButton($(this));
+});
 
 //FUNCTION
 function startGame(){
   pickWord();
   initBoard();
+  createLetters();
   updateBoard();
 }
 function initBoard(){
@@ -42,15 +55,6 @@ function createLetters(){
     $("#letters").append("<button class ='letter' id ='" + letter + "'>" + letter + "</button>");
   }
 }
-$("#letterBtn").click(function(){
-  var boxVal = $("letterBox").val();
-  console.log("You pressed the button and it had the value: " + boxVal);
-})
-
-$(".letter").click(function(){
-  checkLetter($(this).attr("id")); 
-  disableButton($(this));
-});
 //Checks to see if the selected letter exists in the selectedWord
  
 function checkLetter(letters){
@@ -103,9 +107,6 @@ function endGame(win){
     $('#lost').show(); 
   }
 }
-$(".replayBtn").on("click",function(){
-    location.reload();                   
-});
 function disableButton(btn){
   btn.prop("disabled", true);
   btn.attr("class", "btn btn-danger")
