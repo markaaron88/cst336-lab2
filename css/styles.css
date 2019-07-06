@@ -1,11 +1,8 @@
-#won,#lost{
-  display:none;
-}
-#word, #letters{
+#word, #letters {
   padding: 20px 0px;
 }
 
-#man{
+#man {
   margin: 20px auto;
   width: 600px;
   height: 600px;
@@ -14,14 +11,19 @@
   border-width: 1px;
 }
 
-#word{
-  font-size: 1.8em;
-}
-.hint{
-  font-size: 0.6em !important;
+#word {
+  font-size: 1.8em ;
 }
 
-.btn{
+.hint {
+  font-size: 0.6em !important;
+}
+ 
+.btn {
   padding: 7px 7px !important;
   margin: 0px 2px;
+}
+
+#won, #lost {
+  display: none;
 }
