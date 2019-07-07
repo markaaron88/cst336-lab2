@@ -82,10 +82,17 @@ function checkLetter(letter) {
 
   if (positions.length > 0) {
     updateWord(positions, letter);
+    
+    if(!board.includes('_')){
+      endGame(true);
+    }
   } else {
     remainingGuesses -= 1;
+    updateMan();
   }
-
+if(remainingGuesses <= 0){
+  endGame(false)  
+  }
 }
 
 function updateWord(position, letter) {
@@ -96,9 +103,8 @@ function updateWord(position, letter) {
 }
 
 function updateMan() {
-  $("hangImg").attr("src", "imt/stick_" + (6 - remainingGuesses) + ".png");
+  $("#hangImg").attr("src", "img/stick_" + (6 - remainingGuesses) + ".png");
 }
-
 function endGame(win) {
   $("#letters").hide();
 
