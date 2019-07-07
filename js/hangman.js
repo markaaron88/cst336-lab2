@@ -42,10 +42,7 @@ function initBoard() {
     board.push("_")
   }
 }
-initBoard();
-for (var letter of board){
-  document.getElementById("word").innerHTML += letter + " ";
-}
+
 
 function pickWord() {
   var randomInt = Math.floor(Math.random() * words.length);
@@ -55,13 +52,14 @@ function pickWord() {
 
 function updateBoard() {
   $("#word").empty();
-  
-for (var i =0; i < board.length; i++){
-    $("#word").append(board[i] + " ");
+  for (var letter of board) {
+    document.getElementById("word").innerHTML += letter + " ";
   }
-  $("#word").append("<br />");
-  $("#word").append("<span class = 'hint'>Hint: " + selectedHint + "</span>")       
+  
 }
+
+
+
 //Creates the letters inside the letter div
 function createLetters() {
   for ( var letter of alphabet){
@@ -106,6 +104,7 @@ function updateWord(position, letter) {
 function updateMan() {
   $("#hangImg").attr("src", "img/stick_" + (6 - remainingGuesses) + ".png");
 }
+
 function endGame(win) {
   $("#letters").hide();
 
@@ -115,7 +114,13 @@ function endGame(win) {
     $('#lost').show();
   }
 }
-
+function showHint(){
+  console.log("ShowHint()");
+  remainingGuesses -= 1;
+  updateMan();
+  $("#word").append("<br />");
+  $("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>");
+}
 function disableButton(btn) {
   btn.prop("disabled", true);
   btn.attr("class", "btn btn-danger")
