@@ -16,9 +16,10 @@ window.onload = startGame();
 $(".replayBtn").on("click", function() {
   location.reload();
 });
-$(".letterBtn").click(function() {
-  var boxVal = $("#letterBox").val();
-  console.log("You pressed the button and it had the value: " + boxVal);
+$(".letter").click(function(){
+  checkLetter($(this).attr("id"));
+  disableButton($(this));
+  console.log($(this).attr("id"));
 });
 $(".letter").click(function() {
   checkLetter($(this).attr("id"));
@@ -33,7 +34,9 @@ $(".helpBtn").click(function() {
 function startGame(){ 
   pickWord();
   initBoard();
+  createLetters();
   updateBoard();
+
 }
 
 function initBoard() {
