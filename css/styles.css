@@ -1,5 +1,6 @@
 #word, #letters {
   padding: 20px 0px;
+  
 }
 
 #man {
@@ -8,7 +9,7 @@
   height: 600px;
   border: solid;
   border-radius: 5px;
-  border-width: 1px;
+  border-width: 10px;
 }
 
 #word {
