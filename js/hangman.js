@@ -2,8 +2,10 @@ var selectedWord = "";
 var selectedHint = "";
 var board = [];
 var remainingGuesses = 6;
-var words = ["snake", "monkey", "beetle"];
-console.log(words[0]);
+var words = [{word: "snake", hint: "It's a reptile."},
+             {word: "monkey", hint: "It's a mammal."},
+             {word: "beetle", hint: "It's a insect."}];
+
   
 var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G',
   'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -20,10 +22,6 @@ $(".letter").click(function(){
   checkLetter($(this).attr("id"));
   disableButton($(this));
   console.log($(this).attr("id"));
-});
-$(".letter").click(function() {
-  checkLetter($(this).attr("id"));
-  disableButton($(this));
 });
 $(".helpBtn").click(function() {
   disableButton($(this));
