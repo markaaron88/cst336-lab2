@@ -1,6 +1,8 @@
+#won, #lost{
+  display:none;
+}
 #word, #letters {
   padding: 20px 0px;
-  
 }
 
 #man {
@@ -9,7 +11,7 @@
   height: 600px;
   border: solid;
   border-radius: 5px;
-  border-width: 10px;
+  border-width: 1px;
 }
 
 #word {
@@ -23,8 +25,4 @@
 .btn {
   padding: 7px 7px !important;
   margin: 0px 2px;
-}
-
-#won, #lost {
-  display: none;
 }
