@@ -1,28 +1,41 @@
 #won, #lost{
-  display:none;
+  display: none;
 }
-#word, #letters {
+
+h1{
+  color: blueviolet;
+  font-size: 4em;
+  margin-bottom 0px;
+}
+
+h1{
+  color: blueviolet;
+  font-size: 4em;
+  margin-bottom 0px;
+}
+
+#word, #letters{
   padding: 20px 0px;
 }
 
-#man {
+#man{
   margin: 20px auto;
   width: 600px;
   height: 600px;
-  border: solid;
+  border: dotted;
   border-radius: 5px;
-  border-width: 1px;
+  border-width: 3px;
 }
 
-#word {
-  font-size: 1.8em ;
+#word{
+  font-size: 3em;
 }
 
-.hint {
+.hint{
   font-size: 0.6em !important;
 }
- 
-.btn {
-  padding: 7px 7px !important;
+
+.btn{
+  padding:7px 7px !important;
   margin: 0px 2px;
 }
